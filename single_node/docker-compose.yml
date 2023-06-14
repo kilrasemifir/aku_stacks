@@ -20,3 +20,14 @@ services:
     volumes:
       - ./run_workaround.sh:/tmp/run_workaround.sh
     command: "bash -c '/tmp/run_workaround.sh && /etc/confluent/docker/run'"
+  kafka-ui:
+    container_name: kafka-ui
+    image: provectuslabs/kafka-ui:latest
+    ports:
+      - 8080:8080
+    depends_on:
+      - kafka
+    environment:
+      KAFKA_CLUSTERS_0_NAME: local
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:29092
+      DYNAMIC_CONFIG_ENABLED: 'true'
