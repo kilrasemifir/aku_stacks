@@ -7,7 +7,7 @@ producer = KafkaProducer(bootstrap_servers='localhost:9092')
 key = 0
 while msg := input('Message: '):
     producer.send(
-        topic='test2', 
+        topic='demo', 
         value=bytes(msg, 'utf-8'),
         key=bytes(str(key), 'utf-8')
     )

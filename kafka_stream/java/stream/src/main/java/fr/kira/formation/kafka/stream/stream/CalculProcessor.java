@@ -31,7 +31,6 @@ public class CalculProcessor {
                 })
                 .mapValues(this::calculate)
                 .to("output");
-
     }
 
     public String calculate(String message){

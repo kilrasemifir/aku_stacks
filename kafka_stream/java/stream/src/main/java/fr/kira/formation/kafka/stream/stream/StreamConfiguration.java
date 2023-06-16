@@ -24,6 +24,11 @@ public class StreamConfiguration {
         props.put(BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
         props.put(DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass().getName());
         props.put(DEFAULT_VALUE_SERDE_CLASS_CONFIG, Serdes.String().getClass().getName());
+        try{
+            throw new RuntimeException("Error");
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
         return new KafkaStreamsConfiguration(props);
 
     }

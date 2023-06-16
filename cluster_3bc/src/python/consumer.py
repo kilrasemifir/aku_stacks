@@ -3,10 +3,10 @@
 from kafka import KafkaConsumer
 
 consumer = KafkaConsumer(
-    'test2', 
+    'test', 
     bootstrap_servers='localhost:9092',
     client_id='test2-consumer',
-    group_id='test2-group',
+    group_id='test2-group'
     )
 
 for event in consumer:
